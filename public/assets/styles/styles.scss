@@ -106,6 +106,9 @@ figure {
     z-index: 102;
     cursor: pointer;
     transition: 0.3s transform ease;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .main-button:hover {

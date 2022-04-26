@@ -501,6 +501,9 @@ figure {
   transition: 0.3s -webkit-transform ease;
   transition: 0.3s transform ease;
   transition: 0.3s transform ease, 0.3s -webkit-transform ease;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .main-button:hover {
