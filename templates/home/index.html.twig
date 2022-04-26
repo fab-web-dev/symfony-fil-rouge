@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <div class="banner"></div>
+    <div class="section-all">
+    <section class="section section-left">
+        <h2 class="section-title">Dernier article</h2>
+        <article class="article">
+            <a href="#" class="article-link">
+                <figure class="article-figure">
+                    <img class="article-img" src="images/lastarticle.jpg" alt="photo du dernier article">
+                    <figcaption class="article-figcaption">Lorem ipsum dolor</figcaption>
+                </figure>
+            </a>
+        </article>
+    </section>
+    <section class="section section-split section-hide-lc">
+        <h2 class="section-title">Articles populaires</h2>
+        <div class="section-container">
+            <article class="article">
+                <a href="#" class="article-link">
+                    <figure class="article-figure">
+                        <img class="article-img" src="assets/images/article1.jpg" alt="photo article 1">
+                        <figcaption class="article-figcaption">Lorem ipsum dolor</figcaption>
+                    </figure>
+                </a>
+            </article>
+            <article class="article">
+                <a href="#" class="article-link">
+                    <figure class="article-figure">
+                        <img class="article-img" src="images/article2.jpg" alt="photo article 2">
+                        <figcaption class="article-figcaption">Lorem ipsum dolor</figcaption>
+                    </figure>
+                </a>
+            </article>
+            <article class="article">
+                <a href="#" class="article-link">
+                    <figure class="article-figure">
+                        <img class="article-img" src="images/article3.jpg" alt="photo article 3">
+                        <figcaption class="article-figcaption">Lorem ipsum dolor</figcaption>
+                    </figure>
+                </a>
+            </article>
+        </div>
+    </section>
+    </div>
+
+{% endblock %}

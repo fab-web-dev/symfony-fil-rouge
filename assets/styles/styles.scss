@@ -1,0 +1,126 @@
+@import "_variables";
+@import "_nav";
+@import "_section";
+@import "_articles";
+@import "_footer";
+@import "_contact";
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.header {
+    @media screen and (min-width:$tablet) {
+        height: 105px;
+    }
+
+    background-color: $primaryColor;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center; 
+    box-shadow: 4px 8px 10px 3px rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 2px solid #fff;
+}
+
+.main-title {
+    @media screen and (min-width:$tablet) {
+        margin: 0 0 0 30px;
+        font-size: 3em;
+    }
+    margin: 0 0 0 10px;
+    color: #fff;
+    font-family: 'Lobster', cursive;
+    text-transform: capitalize;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    margin: 0;
+}
+
+.banner {
+    @media screen and (min-width:$tablet) {
+        margin: 105px 0 15px 0;
+        height: 400px;
+    }
+
+    @media screen and (min-width:$desktop) {
+        margin: 105px 0 15px 0;
+        height: 500px;
+    }
+
+    
+    height: 300px;
+    margin: 62px 0 15px 0;
+    background: url(../images/headerphoto.jpeg);
+    background-size: cover;
+    background-position: right;
+}
+
+.main-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 101;
+    transition: 0.3s all ease;
+}
+
+.video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main-button {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    color: fff;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    font-size: 1.5em;
+    height: 60px;
+    padding: 0 30px;
+    border-radius: 13px;
+    background: rgba(0,0,0,0.7);
+    z-index: 102;
+    cursor: pointer;
+    transition: 0.3s transform ease;
+}
+
+.main-button:hover {
+    transform: scale(1.1);
+}
+
+.main-hide {
+    opacity: 0;
+    z-index: -1;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.no-transition {
+    transition: initial;
+}

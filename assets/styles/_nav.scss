@@ -1,0 +1,78 @@
+/* nav */
+
+.nav-icon {
+    @media screen and (min-width:$tablet) {
+        margin: 0 30px 0 0;
+        width: 60px;
+        height: 60px;
+    }
+    @media screen and (min-width:$desktop) {
+        display: none;
+    }
+        
+    fill: #fff;
+    margin: 0 10px 0 0;
+    width: 40px;
+    height: 40px;
+}
+
+.nav-list {
+    @media screen and (min-width:$desktop) {
+        display: flex;
+        list-style:none;
+        padding: 0 70px;
+        margin-bottom: 0;
+    }
+    display: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    @media screen and (min-width:$desktop) {
+        margin: 15px;
+        font-weight: bold;
+        font-size: 1.3em;
+        position: relative;
+
+        &:hover {
+            color: #fff;
+            &::after {
+                width: 100%;
+            }
+        }
+        &:active,&:focus {
+            color: #fff;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 2px;
+            width: 0;
+            background-color: #fff;
+            transition: 0.3s all ease;
+        }
+    }
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item:not(:last-child)::after {
+    @media screen and (min-width:$desktop) {
+    content: ""; 
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    background-color: #fff;
+    height: 38%;
+    width: 2px;
+    }
+}

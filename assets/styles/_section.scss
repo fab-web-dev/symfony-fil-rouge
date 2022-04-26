@@ -1,0 +1,86 @@
+/* section */
+
+.section {
+    &-left {
+        .article-figure {
+            @media screen and (min-width:$desktop){
+                height: 330px;
+            }
+        }
+    }
+   
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media screen and (min-width:$desktop) {
+        width: 49%;
+        }
+
+    &-container {
+        width: 100%;
+
+        .article {
+            @media screen and (min-width:$tablet){
+                width: calc(50% - 10px);
+            }
+            @media screen and (min-width:$desktop){
+                width: 100%;
+            }
+        }
+    }
+
+    @media screen and (min-width:$tablet) {
+        &-container {
+            @media screen and (min-width:$desktop) {
+                display: flex;
+                flex-direction: column;
+                }
+
+            display: flex;
+            justify-content: space-between;
+        }
+        &-split {
+            @media screen and (min-width:$desktop) {
+                width: 49%;
+                }
+            }
+        }
+    
+    &-all {
+        @media screen and (min-width:$desktop) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        }
+    }
+
+    &-title {
+        color: #142601;
+        position: relative;
+        display: inline-block;
+        text-transform: capitalize;
+        margin: 30px 0;
+
+    &::after {
+        content: "";
+        border-radius: 100%;
+        position: absolute;
+        width: 60%;
+        height: 3px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: #142601;
+        bottom: -4px;
+        }
+    }
+    &-hide-lc {
+        .article:last-child {
+            @media screen and (min-width:$tablet){
+                display: none;
+                }
+        }
+        
+    }
+}
