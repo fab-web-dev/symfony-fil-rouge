@@ -1,0 +1,4 @@
+npm i
+yarn install
+composer update
+npm run dev
