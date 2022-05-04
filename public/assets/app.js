@@ -37,6 +37,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.add('contact-bg');
     }
     else {
+        
         document.body.classList.remove('contact-bg');
     }
+    const burger = document.querySelector(".nav-icon");
+    const navResponsive = document.querySelector(".nav-responsive");
+    burger.addEventListener("click", () => {
+        navResponsive.classList.toggle("active");
+    })
+
 });
