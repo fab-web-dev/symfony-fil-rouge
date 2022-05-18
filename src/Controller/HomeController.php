@@ -15,4 +15,13 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/?no-intro', name: 'app_home_nointro')]
+    public function noIntro(): Response
+    {
+        return $this->render('home/index.html.twig', [
+            'controller_name' => 'NoIntroController',
+        ]);
+    }
+
 }
