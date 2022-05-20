@@ -19,6 +19,11 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress"
     },
+    "engines": {
+        "node": "16.13.2",
+        "npm": "8.1.2",
+        "yarn": "1.22.18"
+    },
     "browserslist": [
         "defaults"
     ]
