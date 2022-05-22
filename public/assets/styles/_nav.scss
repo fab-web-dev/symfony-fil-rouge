@@ -29,6 +29,9 @@
 .nav-link {
     text-decoration: none;
     color: #fff;
+    display: flex;
+    align-items: center;
+    height: 100%;
     @media screen and (min-width:$desktop) {
         margin: 15px;
         font-weight: bold;
@@ -47,7 +50,7 @@
         &::after {
             content: "";
             position: absolute;
-            bottom: -2px;
+            bottom: 12px;
             left: 0;
             right: 0;
             margin: auto;
@@ -61,6 +64,8 @@
 
 .nav-item {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .nav-item:not(:last-child)::after {
@@ -75,4 +80,9 @@
     height: 38%;
     width: 2px;
     }
+}
+
+.nav-button {
+    background-color: transparent;
+    border: 0;
 }

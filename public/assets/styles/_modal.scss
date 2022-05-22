@@ -1,0 +1,102 @@
+.modal-primary {
+    position: fixed;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 103;
+}
+
+.modal-container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    background-color: $primaryColor;
+    padding: 16px;
+    width: 35%;
+    border: 2px solid black;
+    color: white;
+}
+
+.modal-header {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: $primaryColor;
+    width: 35%;
+    margin: 0;
+    border: 2px solid black;
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.button-modal {
+        background-color: $yellowColor;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-size: 20px;
+}
+      
+.button-modal:hover {
+        opacity: 0.8;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .forget-psw {
+    float: right;
+    padding-top: 0;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    &:hover {
+        color: #fff;
+        opacity: 0.8;
+    }
+  }
+
+.modal-footer {
+    width: 35%;
+    padding: 0;
+    border: 2px solid black;
+    background-color: $primaryColor;
+}
+
+.modal-global {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.link-modal {
+    display: block;
+    width: 140px;
+    height: 76px;
+    background: #B96C0F;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+        color: #fff;
+        opacity: 0.8;
+    }
+}
