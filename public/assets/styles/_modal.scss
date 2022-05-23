@@ -6,57 +6,36 @@
     top: 0;
     left: 0;
     z-index: 103;
+    display: block;
 }
 
 .modal-container {
     display: flex;
-    align-content: center;
+    flex-direction: column;
     align-items: center;
-    background-color: $primaryColor;
+    background-color: #5FAD41;
     padding: 16px;
-    width: 35%;
-    border: 2px solid black;
-    color: white;
+    width: 40%;
+    margin: 20px auto;
+    border: 1px #fff;
 }
 
-.modal-header {
+.modal-title {
     display: flex;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-    width: 35%;
-    margin: 0;
-    font-size: 30px;
-    color: white;
-    text-transform: uppercase;
+    color: #fff;
+}
+
+.modal-label {
+    color: #fff;
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: column;
     border: 0;
 }
 
-.button-modal {
-        background-color: $yellowColor;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        font-size: 20px;
-}
-      
-.button-modal:hover {
-        opacity: 0.8;
-}
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-
-  .forget-psw {
+.forget-psw{
     float: right;
     padding-top: 0;
     color: white;
@@ -66,34 +45,22 @@ input[type=text], input[type=password] {
         color: #fff;
         opacity: 0.8;
     }
-  }
-
-.modal-footer {
-    width: 35%;
-    padding: 0;
-    border: 2px solid black;
-    background-color: $primaryColor;
-}
-
-.modal-global {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
 }
 
 .link-modal {
     display: block;
     width: 140px;
     height: 76px;
-    background: #B96C0F;
+    background: #69747C;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
     color: white;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-decoration: none;
+    box-shadow: 4px 8px 10px 3px rgba(0, 0, 0 ,0.4);
+    border: 2px solid #fff;
     &:hover {
         color: #fff;
         opacity: 0.8;
@@ -103,12 +70,5 @@ input[type=text], input[type=password] {
 .modal-close {
     height: 50px;
     width: 50px;
-}
-
-.modal-header-container {
-    background-color: #3E5902;
-    display: flex;
-    justify-content: space-between;
-    width: 35%;
-    border: 2px solid black;
+    color: #fff;
 }

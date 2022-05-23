@@ -46,4 +46,11 @@ document.addEventListener("DOMContentLoaded", function() {
         navResponsive.classList.toggle("active");
     })
 
+
+    const modal = document.querySelector(".modal-close");
+    modal.addEventListener("click", () => {
+        modal.classList.remove("active");
+
 });
+
+})
