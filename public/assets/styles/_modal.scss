@@ -24,13 +24,12 @@
     align-content: center;
     align-items: center;
     text-align: center;
-    background-color: $primaryColor;
     width: 35%;
     margin: 0;
-    border: 2px solid black;
     font-size: 30px;
     color: white;
     text-transform: uppercase;
+    border: 0;
 }
 
 .button-modal {
@@ -99,4 +98,17 @@ input[type=text], input[type=password] {
         color: #fff;
         opacity: 0.8;
     }
+}
+
+.modal-close {
+    height: 50px;
+    width: 50px;
+}
+
+.modal-header-container {
+    background-color: #3E5902;
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    border: 2px solid black;
 }
