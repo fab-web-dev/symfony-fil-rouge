@@ -3,6 +3,13 @@
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
+<!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="my-5">
+
     {% for flash_error in app.flashes('reset_password_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
@@ -19,4 +26,12 @@
 
         <button class="btn btn-primary">Send password reset email</button>
     {{ form_end(requestForm) }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+
 {% endblock %}
