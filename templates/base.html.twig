@@ -41,7 +41,7 @@
 				</div>
 				<ul class="nav-list">
 					<li class="nav-item">
-						<a href="/?no-intro" class="nav-link">Accueil</a>
+						<a href="{{ path('app_home_nointro') }}" class="nav-link">Accueil</a>
 					</li>
 					<li class="nav-item">
 						<a href="#" class="nav-link">Blog</a>
@@ -50,10 +50,10 @@
 						<a href="#" class="nav-link">À propos</a>
 					</li>
 					<li class="nav-item">
-						<a href="contact?no-intro" class="nav-link">Contact</a>
+						<a href="{{ path('app_contact') }}" class="nav-link">Contact</a>
 					</li>
 					<li class="nav-item">
-						<a href="login?no-intro" id="login" class="nav-link">Se connecter</a>
+						<a href="{{ path('app_login') }}" id="login" class="nav-link">Se connecter</a>
 					</li>
 				</ul>
 			</nav>
