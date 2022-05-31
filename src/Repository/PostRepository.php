@@ -9,8 +9,6 @@ use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Post>
- *
  * @method Post|null find($id, $lockMode = null, $lockVersion = null)
  * @method Post|null findOneBy(array $criteria, array $orderBy = null)
  * @method Post[]    findAll()
@@ -45,6 +43,34 @@ class PostRepository extends ServiceEntityRepository
         if ($flush) {
             $this->_em->flush();
         }
+    }
+
+    public function findOldPosts(int $nb = 5): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p.slug, p.title, p.createdAt
+            FROM App\Entity\Post p
+            WHERE p.active = :status
+            ORDER BY p.createdAt ASC'
+        )
+        ->setParameter('status', true)
+        ->setMaxResults($nb)
+        ;
+        return $query->getResult();
+    }
+
+    public function findLastPosts(int $nb = 5)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.active = :active')
+            ->setParameter('active', true)
+            ->orderBy('p.createdAt', 'DESC')
+            ->setMaxResults($nb)
+            ->getQuery()
+            ->getResult()
+        ;
     }
 
     // /**
