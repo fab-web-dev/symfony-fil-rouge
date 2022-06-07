@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dernier article{% endblock %}
+
+{% block titleh %}{% endblock %}
+
+{% block body %}
+
+ <h1>{{posts.title}}</h1>
+
+ <img src="{{posts.image}}" alt="#">
+
+<p>{{posts.createdAt}}</p>
+
+ <div>{{posts.content}}</div>
+
+{% endblock %}

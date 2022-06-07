@@ -31,6 +31,21 @@ class PostController extends AbstractController
         ]);
     }
 
+    #[Route('/lastPost', name: 'lastPost')]
+    public function lastPost(PostRepository $postRepository): Response
+    {
+        // $posts = $postRepository->findAll();
+        $posts = $postRepository->findLastPosts(1);
+        // dd($posts);
+
+
+
+
+        return $this->render('post/lastPost.html.twig', [
+            'posts' => $posts,
+        ]);
+    }
+
     #[Route('/post/add', name: 'post_add')]
     public function addPost(Request $request, ManagerRegistry $doctrine): Response
     {
