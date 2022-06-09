@@ -6,12 +6,11 @@
 
 {% block body %}
 
- <h1>{{posts.title}}</h1>
+ <h1>{{post.title}}</h1>
 
- <img src="{{posts.image}}" alt="#">
+ <img src="{{post.image}}" alt="#">
 
-<p>{{posts.createdAt}}</p>
+<p>{{post.createdAt | date}}</p>
 
- <div>{{posts.content}}</div>
-
+ <div>{{post.content | raw}}</div>
 {% endblock %}

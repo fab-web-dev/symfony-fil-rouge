@@ -42,7 +42,7 @@ class PostController extends AbstractController
 
 
         return $this->render('post/lastPost.html.twig', [
-            'posts' => $posts,
+            'post' => $posts[0],
         ]);
     }
 
