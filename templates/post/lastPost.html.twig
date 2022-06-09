@@ -10,7 +10,7 @@
 
  <img src="{{post.image}}" alt="#">
 
-<p>{{post.createdAt | date}}</p>
+<p>{{post.createdAt | date| ago}}</p>
 
  <div>{{post.content | raw}}</div>
 {% endblock %}

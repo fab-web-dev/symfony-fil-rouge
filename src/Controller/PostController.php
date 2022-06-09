@@ -46,6 +46,16 @@ class PostController extends AbstractController
         ]);
     }
 
+    #[Route('/post/{id}', name: 'post_view')]
+    public function lastPostHome(Post $post): Response
+    {
+        // dd($post);
+        return $this->render('post/view.html.twig', [
+            'post' => $post
+        ]);
+    }
+
+
     #[Route('/post/add', name: 'post_add')]
     public function addPost(Request $request, ManagerRegistry $doctrine): Response
     {
@@ -65,15 +75,6 @@ class PostController extends AbstractController
 
         return $this->render('post/add.html.twig', [
             'form' => $form->createView(),
-        ]);
-    }
-    
-    #[Route('/post/{slug}', name: 'post_view')]
-    public function post(Post $post): Response
-    {
-        // dd($post);
-        return $this->render('post/view.html.twig', [
-            'post' => $post
         ]);
     }
 

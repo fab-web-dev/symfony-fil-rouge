@@ -9,11 +9,12 @@
     <section class="section section-left">
         <h2 class="section-title">Dernier article</h2>
         <article class="article">
-            <a href="#" class="article-link">
+            <a href="{{path ("post_view",{id:post.id})}}" class="article-link">
                 <figure class="article-figure">
-                    <img class="article-img" src="assets/images/lastarticle.jpg" alt="photo du dernier article">
-                    <figcaption class="article-figcaption">Lorem ipsum dolor</figcaption>
+                    <img class="article-img" src="{{post.image}}" alt="photo du dernier article">
+                    <figcaption class="article-figcaption">{{post.title}}</figcaption>
                 </figure>
+                <p>publié {{post.createdAt | date| ago}}</p>
             </a>
         </article>
     </section>
@@ -23,24 +24,24 @@
             <article class="article">
                 <a href="#" class="article-link">
                     <figure class="article-figure">
-                        <img class="article-img" src="assets/images/article1.jpg" alt="photo article 1">
-                        <figcaption class="article-figcaption">Lorem ipsum dolor</figcaption>
+                        <img class="article-img" src="{{post.image}}" alt="photo article 1">
+                        <figcaption class="article-figcaption">{{post.title}}</figcaption>
                     </figure>
                 </a>
             </article>
             <article class="article">
                 <a href="#" class="article-link">
                     <figure class="article-figure">
-                        <img class="article-img" src="assets/images/article2.jpg" alt="photo article 2">
-                        <figcaption class="article-figcaption">Lorem ipsum dolor</figcaption>
+                        <img class="article-img" src="{{post.image}}" alt="photo article 2">
+                        <figcaption class="article-figcaption">{{post.title}}</figcaption>
                     </figure>
                 </a>
             </article>
             <article class="article">
                 <a href="#" class="article-link">
                     <figure class="article-figure">
-                        <img class="article-img" src="assets/images/article3.jpg" alt="photo article 3">
-                        <figcaption class="article-figcaption">Lorem ipsum dolor</figcaption>
+                        <img class="article-img" src="{{post.image}}" alt="photo article 3">
+                        <figcaption class="article-figcaption">{{post.title}}</figcaption>
                     </figure>
                 </a>
             </article>
