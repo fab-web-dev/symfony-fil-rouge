@@ -72,7 +72,6 @@ class Post
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
-
         return $this;
     }
     */
@@ -110,7 +109,6 @@ class Post
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;
-
         return $this;
     }
     */
