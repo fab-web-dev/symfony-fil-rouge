@@ -24,7 +24,7 @@
                            - Classé dans <a href="{{ path('app_category', {slug: post.category.slug}) }}">{{ post.category.name }} </a>
                         </p>
                     </div>
-                    
+
                     <!-- Divider-->
                     <hr class="my-4" />
 
@@ -35,20 +35,9 @@
 
 
                 </div>
-                                                <!-- Sidebar -->
-                <div class="col-lg-4 col-md-4 mx-auto">
-                    <h2>Les anciens articles</h2>
-                    
-                    {% for oldPost in oldPosts %}
-                        <div class="post-preview">
-                            <a href="{{ path('post_view', {slug: oldPost.slug}) }}">
-                                <h2 class="post-subtitle">{{ oldPost.title }}</h2>
-                            </a>
-                            <p class="post-meta">{{ oldPost.createdAt | ago }}</p>
-                        </div>
-                    {% endfor %}
 
-                </div>
+                
+
             </div>
         </div>
 {% endblock %}

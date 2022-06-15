@@ -24,4 +24,67 @@
                 </div>
             </div>
         </article>
+
+                            <div class="container">
+<div class="row bootstrap snippets bootdeys">
+    <div class="col-md-8 col-sm-12">
+        <div class="comment-wrapper">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Commentaires
+                </div>
+                <div class="panel-body">
+                        {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                                <h2>Ajout d'un commentaire</h2>
+                                {{ form(form) }}
+                        {% endif %}
+                    <hr>
+                    <ul class="media-list">
+                    {% for comment in post.comments %}
+                        <li class="media">
+                            <div class="media-body">
+                                <span class="text-muted pull-right">
+                                    <small class="text-muted">{{comment.createdAt | date | ago}}</small>
+                                </span>
+                                <strong class="text-success">{{comment.user.email}}</strong>
+                                            {% if is_granted("ROLE_USER") and comment.user.id == app.user.id %}
+                                                <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a href=""><i class="fa-solid fa-trash-can"></i></a>
+                                            {% endif %}
+                                <p>
+                                    {{ comment.content }}
+                                </p>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+         <!-- Les commentaires -->
+                            {# {% if(post.comments | length > 0) %}
+                                <h2>Les commentaires</h2>
+                                <ul class="list-group">
+                                    {% for comment in post.comments %}
+                                        <li class="list-group-item">
+                                            <b>{{ comment.createdAt | ago }}, {{ comment.user.email }} a écrit : </b>
+                                            {% if is_granted("ROLE_USER") and comment.user.id == app.user.id %}
+                                                <a href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a href=""><i class="fa-solid fa-trash-can"></i></a>
+                                            {% endif %}
+                                            <br>
+                                            {{ comment.content }}
+                                        </li>
+                                    {% endfor %}
+                                </ul>                            
+                            {% endif %}
+                            <!-- Le formulaire de commentaire -->
+                            {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                                <h2>Ajout d'un commentaire</h2>
+                                {{ form(form) }}
+                            {% endif %} #}
+
+    </div>
+</div>
+</div>
 {% endblock %}

@@ -73,6 +73,22 @@ class PostRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findRandomPhotos(int $nb = 10): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p.image, p.slug
+            FROM App\Entity\Post p
+            WHERE p.active = :status
+            ORDER BY RAND()'
+        )
+        ->setParameter('status', true)
+        ->setMaxResults($nb)
+        ;
+        return $query->getResult();
+    }
+
     // /**
     //  * @return Post[] Returns an array of Post objects
     //  */
