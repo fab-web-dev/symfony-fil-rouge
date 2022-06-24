@@ -15,10 +15,6 @@
 			{# {{ dump(categories) }} #}
 
 			<div class="card mb-4">
-				<div class="card-header">
-					<i class="fas fa-table me-1"></i>
-					DataTable Example
-				</div>
 				<div class="card-body">
 					<table id="datatablesSimple">
 						<thead>
@@ -52,10 +48,7 @@
 									<td>{{ category.parent }}</td>
 									<td>
 										<a href="{{ path('admin_category_update', {id: category.id}) }}" class="btn btn-primary btn-sm">Modifier</a>
-										<a href="{{ path('admin_category_delete', {id: category.id}) }}" class="btn btn-warning btn-sm" onclick="return confirm('Suppression ?')">Supprimer</a>
-									</td>
-									<td>
-										<a href="" class="btn btn-danger btn-sm modal-trigger" data-bs-toggle="modal" data-bs-target="#modalDelete" data-id="{{ category.id }}" data-title="{{ category.name }}">Supprimer</a>
+										<a href="{{ path('admin_category_delete', {id: category.id}) }}" class="btn btn-danger btn-sm" onclick="return confirm('Suppression ?')">Supprimer</a>
 									</td>
 								</tr>
 

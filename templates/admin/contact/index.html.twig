@@ -1,6 +1,6 @@
 {% extends 'sbadmin.html.twig' %}
 
-{% block title %}Liste des commentaires
+{% block title %}Liste des messages de contact
 {% endblock %}
 
 {% block body %}
@@ -8,7 +8,7 @@
 		<div class="container-fluid px-4">
 
 			<h1>
-				Liste des commentaires
+				Liste des messages de contact
 			</h1>
 
 			{# {{ dump(categories) }} #}
@@ -19,35 +19,40 @@
 						<thead>
 							<tr>
 								<th>N°</th>
-								<th>Commentaire</th>
-								<th>Utilisateur</th>
+								<th>Nom</th>
+								<th>Prénom</th>
+								<th>Email</th>
 								<th>Date</th>
-								<th></th>
 								<th></th>
 							</tr>
 						</thead>
 						<tfoot>
 							<tr>
 								<th>N°</th>
-								<th>Commentaire</th>
-								<th>Utilisateur</th>
+								<th>Nom</th>
+								<th>Prénom</th>
+								<th>Email</th>
 								<th>Date</th>
-								<th></th>
 								<th></th>
 							</tr>
 						</tfoot>
 						<tbody>
 
-							{% for comment in comments %}
+							{% for contact in contacts %}
 
 								<tr>
-									<td>{{ comment.id }}</td>
-									<td>{{ comment.content }}</td>
-                                    <td>{{ comment.user.email }}</td>
-									<td>{{ comment.createdAt | date }}</td>
+									<td>{{ contact.id }}</td>
+									<td>{{ contact.nom }}</td>
+                                    <td>{{ contact.prenom }}</td>
+                                    <td>{{ contact.mail }}</td>
+									<td>{{ contact.createdAt | date }}</td>
 									
 									<td>				
-										<a href="{{ path('admin_comment_delete', {id: comment.id}) }}" class="btn btn-danger btn-sm" onclick="return confirm('Suppression ?')">Supprimer</a>
+										<a href="{{ path('admin_contact_delete', {id: contact.id}) }}" class="btn btn-danger btn-sm" onclick="return confirm('Suppression ?')">Supprimer</a>
+									</td>
+
+                                    <td>				
+										<a href="{{ path('admin_contact_read', {id: contact.id}) }}" class="btn btn-primary btn-sm">Lire</a>
 									</td>
 									    </tr>
 

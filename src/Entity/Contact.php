@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ContactRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact
@@ -24,6 +25,10 @@ class Contact
 
     #[ORM\Column(type: 'text')]
     private $contenu;
+
+    #[Gedmo\Timestampable(on:"create")]
+    #[ORM\Column(type: 'datetime_immutable')]
+    private $createdAt;
 
     public function getId(): ?int
     {
@@ -57,6 +62,11 @@ class Contact
     public function getMail(): ?string
     {
         return $this->mail;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
     }
 
     public function setMail(string $mail): self

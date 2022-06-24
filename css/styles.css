@@ -723,4 +723,13 @@ figure {
   -webkit-transition: initial;
   transition: initial;
 }
+
+.date-style {
+  color: #142601;
+}
+
+.date-style:hover {
+  text-decoration: none;
+  color: #3E5902;
+}
 /*# sourceMappingURL=styles.css.map */

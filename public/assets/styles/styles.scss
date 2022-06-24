@@ -131,3 +131,11 @@ figure {
 .no-transition {
     transition: initial;
 }
+
+.date-style {
+    color: $secondaryColor;
+    &:hover {
+        text-decoration: none;
+        color: $primaryColor;
+    }
+}
