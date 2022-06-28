@@ -24,11 +24,10 @@ class HomeController extends AbstractController
             // Trie par ordre décroissant la combinaison des deux tableaux
         array_multisort($sort, SORT_DESC, $postsPopular);
            // Récupère les deux derniers éléments du tableau grace au slice qui coupe le tableau
-        $postsPopular = array_slice($postsPopular, 0, count($postsPopular) - 1 );
+        $postsPopular = array_slice($postsPopular, 0, 3 );
         // dd($postsPopular);
 
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
             'post' => $posts[0],
             'postsPopular' => $postsPopular
         ]);

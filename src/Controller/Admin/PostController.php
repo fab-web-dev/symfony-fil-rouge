@@ -39,7 +39,7 @@ class PostController extends AbstractController
             $post->setActive(true);
             $em->persist($post);
             $em->flush();
-            $this->addFlash('success', 'Article modifié !');
+            $this->addFlash('success', 'Article créé !');
             return $this->redirectToRoute('admin_post_index');
         }
         

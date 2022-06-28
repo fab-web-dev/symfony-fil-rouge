@@ -579,6 +579,106 @@ body {
   margin-bottom: 25px;
 }
 
+.parallax-body {
+  margin: 0;
+  padding: 0;
+  -webkit-perspective: 1px;
+          perspective: 1px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-image: -webkit-gradient(linear, right top, left top, from(#ffb357), color-stop(#ffbe80), color-stop(#ffcba6), color-stop(#ffdbc9), to(#ffede8));
+  background-image: linear-gradient(to left, #ffb357, #ffbe80, #ffcba6, #ffdbc9, #ffede8);
+  text-align: center;
+  width: 100vw;
+}
+
+.parallax-intro {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 60vh;
+  padding: 95vh 0 5vw;
+  position: relative;
+  -webkit-transform-style: inherit;
+          transform-style: inherit;
+  width: 100vw;
+  -webkit-perspective: 1px;
+          perspective: 1px;
+}
+
+.parallax-intro h1 {
+  margin-top: -100px;
+}
+
+.parallax-intro, .parallax-intro:before {
+  background: 50% 50% / cover;
+}
+
+.test {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 20%;
+  display: block;
+  background-size: cover;
+  -webkit-transform-origin: center center 0;
+          transform-origin: center center 0;
+  -webkit-transform: translateZ(-1px) scale(2);
+          transform: translateZ(-1px) scale(2);
+  z-index: -12;
+  height: 70%;
+  width: 90%;
+  margin: 0 5%;
+  overflow-x: hidden;
+}
+
+.parallax-content {
+  margin: auto;
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.parallax-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -10;
+}
+
+.parallax-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.parallax-container img {
+  width: 100% !important;
+}
+
+.parallax-color-title {
+  color: #fff;
+  font-size: 25px;
+  background-color: #142601;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.parallax-color-category {
+  text-decoration: underline;
+  margin-top: -10px;
+  font-size: 20px;
+  color: #142601;
+}
+
 body {
   font-family: 'Ubuntu', sans-serif;
 }
