@@ -36,9 +36,7 @@ class PostController extends AbstractController
     #[Route('/lastPost', name: 'lastPost')]
     public function lastPost(PostRepository $postRepository): Response
     {
-        // $posts = $postRepository->findAll();
         $posts = $postRepository->findLastPosts(1);
-        // dd($posts);
 
 
 

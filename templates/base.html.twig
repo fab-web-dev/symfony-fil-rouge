@@ -24,7 +24,7 @@
 				<div class="nav-responsive">
 					<ul class="nav-responsive-list">
 						<li class="nav-responsive-item">
-							<a href="/?no-intro" class="nav-responsive-link">Accueil</a>
+							<a href="{{ path('app_home') }}" class="nav-responsive-link">Accueil</a>
 						</li>
 						<li class="nav-responsive-item">
 							<a href="#" class="nav-responsive-link">Blog</a>
@@ -33,11 +33,22 @@
 							<a href="#" class="nav-responsive-link">À propos</a>
 						</li>
 						<li class="nav-responsive-item">
-							<a href="contact?no-intro" class="nav-responsive-link">Contact</a>
+							<a href="{{ path('app_contact') }}" class="nav-responsive-link">Contact</a>
 						</li>
+						{% if not is_granted("ROLE_USER") %}
 						<li class="nav-responsive-item">
-							<a href="/login?no-intro" class="nav-responsive-link">Se connecter</a>
+							<a href="{{ path('app_login') }}"  class="nav-responsive-link">Se connecter</a>
 						</li>
+						{% else %}
+					<li class="nav-responsive-item">
+						<a href="{{ path('app_logout') }}"  class="nav-responsive-link">Logout</a>
+					</li>
+					{% endif %}
+					{% if is_granted("ROLE_ADMIN") %}
+					<li class="nav-responsive-item">
+						<a href="{{ path('admin_home') }}"  class="nav-responsive-link">Admin</a>
+					</li>
+					{% endif %}
 					</ul>
 				</div>
 				<ul class="nav-list">
