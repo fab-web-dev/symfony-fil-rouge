@@ -27,7 +27,7 @@
 							<a href="{{ path('app_home') }}" class="nav-responsive-link">Accueil</a>
 						</li>
 						<li class="nav-responsive-item">
-							<a href="#" class="nav-responsive-link">Blog</a>
+							<a href="{{ path('post') }}" class="nav-responsive-link">Articles</a>
 						</li>
 						<li class="nav-responsive-item">
 							<a href="#" class="nav-responsive-link">À propos</a>
@@ -41,7 +41,7 @@
 						</li>
 						{% else %}
 					<li class="nav-responsive-item">
-						<a href="{{ path('app_logout') }}"  class="nav-responsive-link">Logout</a>
+						<a href="{{ path('app_logout') }}"  class="nav-responsive-link">Déconnexion</a>
 					</li>
 					{% endif %}
 					{% if is_granted("ROLE_ADMIN") %}
@@ -56,7 +56,7 @@
 						<a href="{{ path('app_home') }}" class="nav-link">Accueil</a>
 					</li>
 					<li class="nav-item">
-						<a href="#" class="nav-link">Blog</a>
+						<a href="{{ path('post') }}" class="nav-link">Articles</a>
 					</li>
 					<li class="nav-item">
 						<a href="#" class="nav-link">À propos</a>
@@ -70,7 +70,7 @@
 					</li>
 					{% else %}
 					<li class="nav-item">
-						<a href="{{ path('app_logout') }}" id="login" class="nav-link">Logout</a>
+						<a href="{{ path('app_logout') }}" id="login" class="nav-link">Déconnexion</a>
 					</li>
 					{% endif %}
 					{% if is_granted("ROLE_ADMIN") %}
