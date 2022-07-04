@@ -6,26 +6,32 @@ use App\Repository\PostRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Validator\Constraints\Length;
 
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
     public function index(PostRepository $postRepository): Response
     {
+        // va chercher dans $postRepository la methode findLastPosts et l'assigne à $posts
         $posts = $postRepository->findLastPosts(1);
+
+        // va chercher dans $postRepository la methode findAll et l'assigne à $postsPopular
         $postsPopular = $postRepository->findAll();
-            // Je déclare un tableau vide 
+
+        // Je déclare un tableau vide 
         $sort = array();
+
+        // Je fais une boucle foreach pour passer en défilé le tableau en assignant la clé de l'élément courant (sa valeur dans le tableau) à la variable $key.
+        // $key étant l'id et $row étant l'article
         foreach ($postsPopular as $key => $row) {
-            // Assigne le nombre de commentaires dans le tableau $sort
+
+            // Assigne le nombre de commentaires dans le tableau $sort , pour chaque commentaire compte 
           $sort[$key]  = count($row->getComments());
         }
             // Trie par ordre décroissant la combinaison des deux tableaux
         array_multisort($sort, SORT_DESC, $postsPopular);
            // Récupère les deux derniers éléments du tableau grace au slice qui coupe le tableau
         $postsPopular = array_slice($postsPopular, 0, 3 );
-        // dd($postsPopular);
 
         return $this->render('home/index.html.twig', [
             'post' => $posts[0],

@@ -55,7 +55,7 @@ class PostController extends AbstractController
         // Traitement du formulaire pour ajouter un commentaire
         $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);
-        // dd($form);
+        
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 

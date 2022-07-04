@@ -1,0 +1,30 @@
+.post-title {
+
+    text-decoration: none;
+    color: #fff;
+    background: $secondaryColor;
+    border-bottom: 4px solid #fff;
+    
+
+    &:hover {
+        color: #fff;
+        background-color: $primaryColor;
+        text-decoration: none;
+    }
+}
+
+.post-subtitle{
+    color: $secondaryColor;
+    
+    &:hover {
+        color: $primaryColor;
+        text-decoration: none;
+    }
+}
+
+.post-meta {
+    color: red;
+    font-size: 13px;
+    font-weight: 102px;
+    font-weight: bold;
+}
