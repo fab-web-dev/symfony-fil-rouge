@@ -61,14 +61,23 @@ class PostRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    // Je créer une fonction findLastPosts qui possède un paramètre $nb qui est un nombre , le nombre 5 est la valeur par default .
     public function findLastPosts(int $nb = 5)
     {
+        // J'utilise le QueryBulder pour constuire ma requete
+        // Je donne un alias p pour faire reference aux post 
         return $this->createQueryBuilder('p')
+        // andWhere est ma condition qui impose que mon post soit actif
             ->andWhere('p.active = :active')
+            // Ajout d'un parametre grace au setParameter qui impose que le post soit active : true
             ->setParameter('active', true)
+            // orderBy trie par date de création et par ordre descendant
             ->orderBy('p.createdAt', 'DESC')
+            // le setMaxResults nous affichera le nombre maximum de resultats présent dans la variable $nb
             ->setMaxResults($nb)
+            // getQuery permet de déclancher la requête SQL
             ->getQuery()
+            // getResult pour obtenir le résultat
             ->getResult()
         ;
     }

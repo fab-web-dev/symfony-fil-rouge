@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+// les uses servent à indiquer les chemins dont j'ai besoin ( repository, form, ect...)
 use App\Repository\PostRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,10 +13,10 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(PostRepository $postRepository): Response
     {
-        // va chercher dans $postRepository la methode findLastPosts et l'assigne à $posts
+        // va chercher dans $postRepository le resultat de la methode findLastPosts et l'assigne à $posts []
         $posts = $postRepository->findLastPosts(1);
 
-        // va chercher dans $postRepository la methode findAll et l'assigne à $postsPopular
+        // va chercher dans $postRepository le resultat de la methode findAll et l'assigne à $postsPopular []
         $postsPopular = $postRepository->findAll();
 
         // Je déclare un tableau vide 
@@ -30,7 +31,7 @@ class HomeController extends AbstractController
         }
             // Trie par ordre décroissant la combinaison des deux tableaux
         array_multisort($sort, SORT_DESC, $postsPopular);
-           // Récupère les deux derniers éléments du tableau grace au slice qui coupe le tableau
+           // Récupère les trois derniers éléments du tableau grace au slice qui coupe le tableau
         $postsPopular = array_slice($postsPopular, 0, 3 );
 
         return $this->render('home/index.html.twig', [
